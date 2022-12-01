@@ -1,0 +1,1 @@
+This folder is where I'm putting code produced for advent of code 2022.
