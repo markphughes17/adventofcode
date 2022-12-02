@@ -9,9 +9,6 @@ def printlines():
     for i in initialInventory:
         tempi = i.strip()
         formattedInventory.append(tempi)
-
-
-    print("full inventory: " + str(formattedInventory))
     counter = 0
     for item in formattedInventory:
         if item == '':
@@ -20,15 +17,9 @@ def printlines():
         else:
             counter += int(item)
 
-    print(totals)
-
     sortedTotals = sorted(totals, reverse=True)
 
-    print(sortedTotals)
-
-    print(sortedTotals[0:3])
-
-    print(sum(sortedTotals[0:3]))
+    print("result: " + str(sum(sortedTotals[0:3])))
 
 
 printlines()
