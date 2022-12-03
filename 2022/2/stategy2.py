@@ -4,9 +4,13 @@
 ### 3 points for a tie
 ### 0 point for a loss
 
-### A = Rock     = X
-### B = Paper    = Y
-### C = Scissors = Z
+### A = Rock
+### B = Paper
+### C = Scissors
+
+### X = lose
+### Y = draw
+### Z = win
 
 
 input = open("./input.txt")
@@ -19,36 +23,36 @@ def playRounds():
         print("opponent: "+  opponent)
         print("me: " + me)
 
-        if opponent == 'A':
-            #Tie
+        if opponent == 'A': #Rock
+            #lose
             if me == "X":
-                myScore += 4 #1 for rock, 3 for a tie
-            #win
-            elif me == "Y":
-                myScore += 8 #2 for paper, 6 for winning
-            #loss
-            else:
                 myScore += 3 #3 for scissors, 0 for loss
-        elif opponent == "B":
-            # loss
+            #draw
+            elif me == "Y":
+                myScore += 4 #1 for rock, 3 for draw
+            #win
+            else:
+                myScore += 8 #2 for paper, 6 for win
+        elif opponent == "B": #Paper
+            # lose
             if me == "X":
                 myScore += 1  # 1 for rock, 0 for loss
-            # tie
+            # draw
             elif me == "Y":
-                myScore += 5  # 2 for paper, 3 for tie
+                myScore += 5  # 2 for paper, 3 for draw
             # win
             else:
                 myScore += 9  # 3 for scissors, 6 for win
-        elif opponent == "C":
-            # win
+        elif opponent == "C": #scissors
+            # lose
             if me == "X":
-                myScore += 7  # 1 for rock, 6 for win
-            # loss
-            elif me == "Y":
                 myScore += 2  # 2 for paper, 0 for loss
-            # tie
+            # draw
+            elif me == "Y":
+                myScore += 6  # 3 for scissors, 3 for draw
+            # win
             else:
-                myScore += 6  # 3 for scissors, 3 for tie
+                myScore += 7  # 1 for rock, 6 for win
     print(myScore)
 
 
